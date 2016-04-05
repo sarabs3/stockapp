@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock Market App - Expert's</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Stock</span>Market</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-md-3 col-lg-2 sidebar">
+		<ul class="nav menu">
+			<li><a href="dashboard.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="companies.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Companies</a></li>
+			<li class="active"><a href="experts.html"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Expert's</a></li>
+			<li><a href="add-share-price.html"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg>Company's Share Price</a></li>
+			<li><a href="add-predictions.html"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Expert's Predictions</a></li>
+			<li><a href="reports.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Reports</a></li>
+		</ul>
+
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Expert's List</h1>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body listing-table">
+					    <a href="" class="add-btn-brand" data-toggle="modal" data-target="#add-expert-profile" title="">Add Expert Profile</a>
+						<table data-toggle="table" data-show-refresh="false" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						        <th data-field="state" data-checkbox="true" >ID</th>
+						        <th data-field="id" data-sortable="true">Expert ID</th>
+						        <th data-field="name"  data-sortable="true">Expert Name</th>
+						        <th data-field="description"  data-sortable="false">Description</th>
+						        <th data-field="predictions" data-sortable="true">Predictions</th>
+						        <th data-field="accuracy" data-sortable="true">Accuracy</th>
+						        <th data-field="action" width="10%" data-sortable="false">Action</th>
+						    </tr>
+						    </thead>
+						    <tbody>
+						    	<tr>
+							    	<td data-field="state" data-checkbox="true" >ID</td>
+							        <td data-field="id" data-sortable="true">230901</td>
+							        <td data-field="name"  data-sortable="true">Neelesh Mishra</td>
+							        <td data-field="description"  data-sortable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							        <td data-field="predictions" data-sortable="true"><span class="error-text">Wrong: 5%</span><Br/><span class="success-text">Right: 40%</span></td>
+							        <td data-field="accuracy"  data-sortable="true">70%</td>
+							        <td data-field="action" data-sortable="false"><svg data-toggle="modal" data-target="#edit-expert-profile" class="glyph stroked pencil"><use xlink:href="#stroked-pencil"/></svg><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"/></svg></td>
+						    	</tr>
+						    	<tr>
+							    	<td data-field="state" data-checkbox="true" >ID</td>
+							        <td data-field="id" data-sortable="true">230901</td>
+							        <td data-field="name"  data-sortable="true">Neelesh Mishra</td>
+							        <td data-field="description"  data-sortable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							        <td data-field="predictions" data-sortable="true"><span class="error-text">Wrong: 5%</span><Br/><span class="success-text">Right: 40%</span></td>
+							        <td data-field="accuracy"  data-sortable="true">70%</td>
+							        <td data-field="action" data-sortable="false"><svg data-toggle="modal" data-target="#edit-expert-profile" class="glyph stroked pencil"><use xlink:href="#stroked-pencil"/></svg><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"/></svg></td>
+						    	</tr>
+						    	<tr>
+							    	<td data-field="state" data-checkbox="true" >ID</td>
+							        <td data-field="id" data-sortable="true">120901</td>
+							        <td data-field="name"  data-sortable="true">Neelesh Mishra</td>
+							        <td data-field="description"  data-sortable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							        <td data-field="predictions" data-sortable="true"><span class="error-text">Wrong: 5%</span><Br/><span class="success-text">Right: 40%</span></td>
+							        <td data-field="accuracy"  data-sortable="true">70%</td>
+							        <td data-field="action" data-sortable="false"><svg data-toggle="modal" data-target="#edit-expert-profile" class="glyph stroked pencil"><use xlink:href="#stroked-pencil"/></svg><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"/></svg></td>
+						    	</tr>
+						    	<tr>
+							    	<td data-field="state" data-checkbox="true" >ID</td>
+							        <td data-field="id" data-sortable="true">430901</td>
+							        <td data-field="name"  data-sortable="true">Neelesh Mishra</td>
+							        <td data-field="description"  data-sortable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							        <td data-field="predictions" data-sortable="true"><span class="error-text">Wrong: 5%</span><Br/><span class="success-text">Right: 40%</span></td>
+							        <td data-field="accuracy"  data-sortable="true">70%</td>
+							        <td data-field="action" data-sortable="false"><svg data-toggle="modal" data-target="#edit-expert-profile" class="glyph stroked pencil"><use xlink:href="#stroked-pencil"/></svg><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"/></svg></td>
+						    	</tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		
+		
+	</div><!--/.main-->
+
+
+<!-- add company profile modal -->
+<div id="add-expert-profile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Expert Profile</h4>
+      </div>
+      <div class="modal-body">
+       <form role="form">				
+			<div class="form-group">
+				<label>Expert Name</label>
+				<input placeholder="" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Expert Description</label>
+				<textarea rows="2" class="form-control"></textarea>
+			</div>
+		</form>
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" type="submit">Add Expert</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Edit company profile modal -->
+<div id="edit-expert-profile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Expert Profile</h4>
+      </div>
+      <div class="modal-body">
+       <form role="form">				
+			<div class="form-group">
+				<label>Expert Name</label>
+				<input placeholder="" Value="Neelesh Mishra" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Company Description</label>
+				<textarea rows="5" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
+			</div>
+		</form>
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" type="submit">Update Expert</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>

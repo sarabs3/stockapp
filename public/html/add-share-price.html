@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock Market App - Companies</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Stock</span>Market</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-md-3 col-lg-2 sidebar">
+		<ul class="nav menu">
+			<li><a href="dashboard.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="companies.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Companies</a></li>
+			<li><a href="experts.html"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Expert's</a></li>
+			<li class="active"><a href="add-share-price.html"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg>Company's Share Price</a></li>
+			<li><a href="add-predictions.html"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Expert's Predictions</a></li>
+			<li><a href="reports.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Reports</a></li>
+		</ul>
+
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Add Company's Share Price</h1>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body">	
+					  
+       <form role="form">				
+			<div class="form-group">
+				<label>Company Name</label>
+				<select class="form-control">
+					<option value="0">Select a Company</option>
+					<option value="1">HDFC</option>
+					<option value="2">Airtel</option>
+				</select>
+			</div>
+			<div class="form-group has-error">
+				<label>Current Share Price</label>
+				<input placeholder="" value="4546.45" class="form-control">
+				<span class="error-text">Please fill the fields</span>
+			</div>
+			<div class="form-group">
+				<label>Profit/Loss</label>
+				<select class="form-control" id="company-share-price">
+					<option value="0">Select Profit/Loss</option>
+					<option value="profit">Profit</option>
+					<option value="loss">Loss</option>
+				</select>
+			</div>
+			<div id="profit-company">			
+				<div class="form-group">
+					<label>Company Profit</label>
+					<input placeholder="" Value="" class="form-control">
+				</div>				
+				<div class="form-group">
+					<label>TimeStamp</label>
+					<input placeholder="" disabled="" Value="02/17/2016 3:21 PM" class="form-control">
+				</div>
+			</div>
+			<div id="loss-company">	
+				<div class="form-group">
+					<label>Company Loss</label>
+					<input placeholder="" Value="" class="form-control">
+				</div>			
+				<div class="form-group">
+					<label>TimeStamp</label>
+					<input placeholder="" disabled="" Value="02/17/2016 3:21 PM" class="form-control">
+				</div>
+			</div>
+
+      <button class="btn btn-primary" type="submit">Add Share Price</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Reset</button>
+		</form>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		
+		
+	</div><!--/.main-->
+
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
+				$(this).find('em:first').toggleClass("glyphicon-minus");	  
+			}); 
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+
+		// company prfil/loss dropdown
+		$("#loss-company").hide();
+		$("#profit-company").hide();
+		$('#company-share-price').on('change',function(){
+		    if( $(this).val()==="loss"){
+		    $("#loss-company").slideDown();
+		    $("#profit-company").hide();
+		    }
+		    else if( $(this).val()==="profit"){
+		    $("#profit-company").slideDown();
+		    $("#loss-company").hide();
+		    }
+		    else{
+		    $("#profit-company").slideUp();
+		    $("#loss-company").slideUp();
+		    }
+		});
+	</script>	
+</body>
+
+</html>
